@@ -10,6 +10,8 @@ dp = Dispatcher()
 
 router = Router()
 
+
+
 @router.message(Command("start"))
 async def start_handler(msg: Message):
     await msg.answer(text="Привет")
@@ -22,6 +24,9 @@ async def start_handler(msg: Message):
         ]
     ])
     await msg.answer(text='Привет', reply_markup=inline_markup)
+
+@router.callback_query()
+async def callback_query_handler(callback_query: CallbaclQuery)
 
 async def main():
     await dp.start_polling(bot)
