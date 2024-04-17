@@ -11,7 +11,7 @@ router = Router()
 
 @router.message(Command("start"))
 async def start_handler(msg: Message):
-    await msg.answer(text="Привет, я бот, который сообщит тебе, какой сегодня праздник")
+    await msg.answer(text="123")
 
 async def main():
     await dp.start_polling(bot)
