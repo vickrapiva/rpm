@@ -1,7 +1,8 @@
+
 import asyncio
 
 from aiogram import Bot, Dispatcher, Router
-from aiogram.types import Message
+from aiogram.types import Message, ReplyKeyboardMarkup, BotCommand, InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton
 from aiogram.filters import Command 
 
 bot = Bot(token="7086038652:AAEKbcrL_Mod-9KNUf2jZGNBE_ZYj7ti0jg")
@@ -11,7 +12,16 @@ router = Router()
 
 @router.message(Command("start"))
 async def start_handler(msg: Message):
-    await msg.answer(text="123")
+    await msg.answer(text="Привет")
+
+    markup = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text = 'привет')]])
+    inline_markup = InlineKeyboardMarkup(inline_keyboard=[
+        [
+            InlineKeyboardButton(text='Говно', callback_data='1'),
+            InlineKeyboardButton(text='переделывай', callback_data= '2')
+        ]
+    ])
+    await msg.answer(text='Привет', reply_markup=inline_markup)
 
 async def main():
     await dp.start_polling(bot)
