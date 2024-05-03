@@ -9,7 +9,7 @@ kb_start_next = InlineKeyboardMarkup(inline_keyboard=[
     ]
 ])
 
-kb_start_next = InlineKeyboardMarkup(inline_keyboard=[
+kb_start_back = InlineKeyboardMarkup(inline_keyboard=[
     [
         InlineKeyboardButton(
             text='Назад',
