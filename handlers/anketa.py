@@ -21,7 +21,7 @@ async def cancel_handler(callback_query: CallbackQuery, state: FSMContext):
 
 @router.message(Anketa.name)
 async def set_name_by_anketa_handler(msg: Message, state: FSMContext):
-    await state.update_data(name-msg.text)
+    await state.update_data(name=msg.text)
     await state.set_state(Anketa.age) 
     await msg.answer( 
         "Введите Ваш возраст", reply_markup=kb_apteka_cancel_and_back)
@@ -36,7 +36,7 @@ async def back_anketa_handler(callback_query: CallbackQuery, state: FSMContext):
     
     elif current_state == Anketa.age:
         await state.set_state(Anketa.name) 
-        await callback_query,messageanswer( 
+        await callback_query.message.answer( 
             "Введите Ваше имя", reply_markup=kb_apteka_cancel)
  
 @router.message(Anketa.age)
