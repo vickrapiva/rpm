@@ -37,7 +37,7 @@ async def back_anketa_handler(callback_query: CallbackQuery, state: FSMContext):
     elif current_state == Anketa.age:
         await state.set_state(Anketa.name) 
         await callback_query,messageanswer( 
-            "Введите Вaше имя", reply_markup=kb_apteka_cancel)
+            "Введите Ваше имя", reply_markup=kb_apteka_cancel)
  
 @router.message(Anketa.age)
 async def set_age_by_anketa_handler(msg: Message, state: FSMContext):
